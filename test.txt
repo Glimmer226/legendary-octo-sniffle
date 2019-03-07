@@ -1,0 +1,7 @@
+this file is use for easygui testing
+
+I will write some content to fill this file 
+
+Let it looks like not such empty!
+
+Thanks very much!!!
