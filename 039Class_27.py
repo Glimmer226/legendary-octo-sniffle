@@ -36,6 +36,36 @@ class Stack:
         print self.space[0]
 
 
+class Word(str):
+    def __new__(cls, word):
+        if ' ' in word:
+            print "Value contains paces. Truncating to first space."
+            word = word[:word.index(' ')]
+        return str.__new__(cls, word)
+
+    def __gt__(self, other):
+        return len(self) > len(other)
+
+    def __lt__(self, other):
+        return len(self) < len(other)
+
+    def __ge__(self, other):
+        return  len(self) >= len(other)
+
+    def __le__(self, other):
+        return  len(self) <= len(other)
+
+
+class C:
+    def __init__(self, *args):
+        if not args:
+            print "No args inputted"
+        else:
+            print "%d args have been inputted, they are" % len(args),
+            for each in args:
+                print each,
+
+
 if __name__ == "__main__":
     a = Test()
     b = Test()
@@ -56,3 +86,5 @@ if __name__ == "__main__":
     stack.pop()
     stack.top()
     stack.isEmpty()
+    print "*" * 40
+    c1 = C(1,2,3,4,5,6,7,8)
